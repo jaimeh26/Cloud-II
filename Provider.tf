@@ -31,7 +31,6 @@ provider "azurerm"{
   tenant_id=var.tenant_id
 
 }
-[8:42 p.m.] Sami Islam
 variable "subscription_id"{
 
   type=string
