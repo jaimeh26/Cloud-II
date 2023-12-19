@@ -32,7 +32,8 @@ resource "azurerm_mssql_database" "mcitdb" {
   sku_name       = "S0"
   zone_redundant = true
   enclave_type   = "VBS"
-
+  
   tags = {
     foo = "bar"
+  }
   }
