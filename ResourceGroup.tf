@@ -22,7 +22,7 @@ resource "azurerm_mssql_server" "mcitdb" {
   administrator_login          = "4dm1n157r470r"
   administrator_login_password = "4-v3ry-53cr37-p455w0rd"
 }
-resource "azurerm_mssql_database" "mcitdb" {}
+resource "azurerm_mssql_database" "mcitdb" {
   name           = "example-db"
   server_id      = azurerm_mssql_server.mcitdb.id
   collation      = "SQL_Latin1_General_CP1_CI_AS"
