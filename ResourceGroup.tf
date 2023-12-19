@@ -14,6 +14,14 @@ resource "azurerm_storage_account" "mcitstorage" {
     environment = "staging"
   }
 }
+resource "azurerm_mssql_server" "mcitdb" {
+  name                         = "example-sqlserver"
+  resource_group_name          = azurerm_resource_group.mcit420zz5um.name
+  location                     = azurerm_resource_group.mcit420zz5um.location
+  version                      = "12.0"
+  administrator_login          = "4dm1n157r470r"
+  administrator_login_password = "4-v3ry-53cr37-p455w0rd"
+}
 resource "azurerm_mssql_database" "mcitdb" {
   name           = "example-db"
   server_id      = azurerm_mssql_server.mcitdb.id
