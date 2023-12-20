@@ -11,3 +11,9 @@ variable "client_secret"{
 variable "tenant_id"{
   type=string
 }
+variable "administrator_login"{
+  type=string
+}
+variable "administrator_login_password"{
+  type=string
+}
