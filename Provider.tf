@@ -30,5 +30,9 @@ provider "azurerm"{
 
   tenant_id=var.tenant_id
 
+  administrator_login=var.administrator_login
+
+  administrator_login_password=var.administrator_login_password
+
 }
 
