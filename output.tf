@@ -4,3 +4,6 @@ output "print{
 output "secondprint"{
       value = local.owner
 }
+output "thirdprint"{
+      value = local.location
+}
