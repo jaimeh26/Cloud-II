@@ -7,3 +7,6 @@ output "secondprint"{
 output "thirdprint"{
       value = local.location
 }
+output "fourthprint"{
+      value=local.lengthofservice_name
+}
