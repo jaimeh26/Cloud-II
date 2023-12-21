@@ -10,3 +10,6 @@ output "thirdprint"{
 output "fourthprint"{
       value=local.lengthofservice_name
 }
+output "fifthprint"{
+      value=local.getthelength
+}
