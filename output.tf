@@ -1,4 +1,4 @@
-output "print{
+output "print"{
       value = local.service_name
 }
 output "secondprint"{
