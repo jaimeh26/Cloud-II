@@ -17,3 +17,7 @@ variable "administrator_login"{
 variable "administrator_login_password"{
   type=string
 }
+variable "countnumber"{
+  type=number
+  default=0
+}
