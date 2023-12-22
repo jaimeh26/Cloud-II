@@ -44,10 +44,6 @@ variable "component"{
   type    = list
   default = ["bastion", "frontproxy", "db", "infra"]
 }
-variable "environment"{
-  type=string
-  default="staging"
-}
 variable "users"{
  type=list
  default=["jaime","sheila","mia"]
