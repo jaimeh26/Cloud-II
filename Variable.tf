@@ -48,7 +48,7 @@ variable "environment"{
   type=string
   default="staging"
 }
-variable "dev"{
- type=string
- default="staging"
+variable "users"{
+ type=list
+ default=["jaime","sheila","mia"]
 }
