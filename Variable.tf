@@ -40,6 +40,14 @@ variable "cross_tenant_replication_enabled"{
  type=bool
  default=false
 }
+variable "component"{
+  type    = list
+  default = ["bastion", "frontproxy", "db", "infra"]
+}
+variable "environment"{
+  type=string
+  default="staging"
+}
 variable "environment"{
  type=string
  default="staging"
