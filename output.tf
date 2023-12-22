@@ -13,6 +13,6 @@ output "fourthprint"{
 output "fifthprint"{
       value=local.getthelength
 }
-output "countnumber"{
-      value=var.countnumber
+output "countNumber"{
+      value=var.countNumber
 }
