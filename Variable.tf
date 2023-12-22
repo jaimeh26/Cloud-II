@@ -48,7 +48,7 @@ variable "environment"{
   type=string
   default="staging"
 }
-variable "environment"{
+variable "dev"{
  type=string
  default="staging"
 }
