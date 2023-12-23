@@ -28,10 +28,10 @@ output "numbersfromonetoten"{
 output "sumoftennumbers"{
       value=sum([for numberoutput in local.total_output: numberoutput])
 }
-output "canadianfoodlist"{
+output "canadianfoodlist2"{
       value=var.canadianfoodlist
 }
-output "numbersfromonetoten"{
+output "numbersfromonetoten2"{
       value=var.numbersfromonetoten
 }
 
