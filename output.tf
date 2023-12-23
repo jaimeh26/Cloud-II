@@ -19,3 +19,6 @@ output "countNumber"{
 output "wintersports"{
     value=[for sport in local.wintersports:sport]
 }
+output "canadianfoodlist"{
+      value=[for food in local.canadianfoodlist:food]
+}
