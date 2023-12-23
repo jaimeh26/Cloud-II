@@ -35,6 +35,6 @@ output "numbersfromonetoten2"{
       value=var.numbersfromonetoten
 }
 output "sumoftennumbers2"{
-      value=sum([for numberoutput in local.total_output: tonumber(numberoutput)])
+      value=sum([for numberoutput in local.total_output2: tonumber(numberoutput)])
 }
 
