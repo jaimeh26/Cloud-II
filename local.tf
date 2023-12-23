@@ -8,4 +8,5 @@ getthelength=length(local.location)
 wintersports=["icehockey","snowboarding","iceskating"]
 canadianfoodlist=["poutine","smokemeat","patechinois","macaroni","salmon","pizza","hotdog","steak","lasagna"]
 numbersfromonetoten=[1,2,3,4,5,6,7,8,9,10]
+total_output = [1,2,3,4,5,6,7,8,9,10]
 }
