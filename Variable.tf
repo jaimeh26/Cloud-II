@@ -48,3 +48,11 @@ variable "users"{
  type=list
  default=["jaime","sheila","mia"]
 }
+variable "canadianfoodlist"{
+  type=list
+  default=["poutine","smokemeat","patechinois","macaroni","salmon","pizza","hotdog","steak","lasagna"]
+}
+variable "numbersfromonetoten"{
+  type=list
+  default=[1,2,3,4,5,6,7,8,9,10]
+}
