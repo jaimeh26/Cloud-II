@@ -22,3 +22,6 @@ output "wintersports"{
 output "canadianfoodlist"{
       value=[for food in local.canadianfoodlist:food]
 }
+output "numbersfromonetoten"{
+      value=[for number in local.numbersfromonetoten:number]
+}
