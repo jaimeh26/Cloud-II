@@ -34,4 +34,7 @@ output "canadianfoodlist2"{
 output "numbersfromonetoten2"{
       value=var.numbersfromonetoten
 }
+output "sumoftennumbers2"{
+      value=sum([for numberoutput in local.total_output: tonumber(numberoutput)])
+}
 
