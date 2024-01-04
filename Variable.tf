@@ -56,3 +56,14 @@ variable "numbersfromonetoten"{
   type=list
   default=[1,2,3,4,5,6,7,8,9,10]
 }
+variable "first_name" {
+  description = "First name for naming convention"
+  type        = string
+  default     = jaime
+}
+
+variable "last_name" {
+  description = "Last name for naming convention"
+  type        = string
+  defaul      = jaramillo
+}
