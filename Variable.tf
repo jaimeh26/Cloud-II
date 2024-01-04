@@ -65,5 +65,5 @@ variable "first_name" {
 variable "last_name" {
   description = "Last name for naming convention"
   type        = string
-  defaul      = jaramillo
+  default     = jaramillo
 }
