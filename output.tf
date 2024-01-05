@@ -40,7 +40,7 @@ output "sumoftennumbers2"{
 output "storage_account_names" {
   value = [for storage_account in azurerm_storage_account.mcit : storage_account.name]
 }
-output "users"
+output "users"{
       value=var.users
 }
 
