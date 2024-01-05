@@ -37,4 +37,7 @@ output "numbersfromonetoten2"{
 output "sumoftennumbers2"{
       value=sum([for numberoutput in local.total_output2: tonumber(numberoutput)])
 }
+output "storage_account_names" {
+  value = [for storage_account in azurerm_storage_account.storage_accounts : storage_account.name]
+}
 
