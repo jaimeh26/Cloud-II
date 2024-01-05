@@ -59,13 +59,13 @@ variable "numbersfromonetoten"{
 variable "first_name" {
   description = "First name for naming convention"
   type        = string
-  default     = jaime
+  default     ="jaime"
 }
 
 variable "last_name" {
   description = "Last name for naming convention"
   type        = string
-  default     = jaramillo
+  default     ="jaramillo"
 }
 variable "storage_account_count" {
   description = "Number of storage accounts to create"
