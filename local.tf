@@ -12,4 +12,6 @@ total_output = [1,2,3,4,5,6,7,8,9,10]
 total_output2 = ["1","2","3","4","5","6","7","8","9","10"]
 name_of_the_list=["firstnamestorageaccountmcitlastname","storage2","storage3"]
 virtual_network_list=["vnetwork1","vnetwork2","vnetwork3",vnetwork4"]
+
 }
+
