@@ -72,3 +72,7 @@ variable "storage_account_count" {
   type        = number
   default     = 3
 }
+variable "prefix"{
+ type=string
+ default="mcit"
+}
