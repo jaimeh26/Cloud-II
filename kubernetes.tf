@@ -1,7 +1,7 @@
 locals{ 
   cluster_names=["kbtjaime1","kbtjaime2","kbtjaime3","kbtjaime4","kbtjaime5"]
 }
-resource "azurerm_resource_group" "azureresourcegroup" {
+resource "azurerm_resource_group" "mcit420zz5um" {
   name     = "MCIT_resource_group"
   location = "Canada Central"
 }
