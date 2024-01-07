@@ -1,10 +1,7 @@
 locals{ 
   cluster_names=["kbtjaime1","kbtjaime2","kbtjaime3","kbtjaime4","kbtjaime5"]
 }
-resource "azurerm_resource_group" "mcit420zz5um" {
-  name     = "mcit_resource_group_420-ZZ5-UM"
-  location = "Canada Central"
-}
+
 resource "azurerm_kubernetes_cluster" "batchabcd" {
   for_each            = {for cluster in local.cluster_names: cluster=>cluster}
   name                = "${var.prefix}cluster"
