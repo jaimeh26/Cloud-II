@@ -1,4 +1,4 @@
-resource "azurerm_network_security_group" "mcitvn" {
+resource "azurerm_network_security_group" "mcitsg" {
   name                = "${var.prefix}security_group"
   location            = azurerm_resource_group.mcit420zz5um.location
   resource_group_name = azurerm_resource_group.mcit420zz5um.name
