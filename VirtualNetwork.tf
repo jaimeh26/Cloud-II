@@ -7,6 +7,7 @@ locals{
   vnet_names=["vnet-jaime1","vnet-jaime2","vnet-jaime3","vnet-jaime4"]
 }
 resource "azurerm_virtual_network" "mcitvn" {
+  for_each            = {for vnet in local.vnet_names: vnet=>vnet}
   name                = "example-network"
   location            = azurerm_resource_group.mcit420zz5um.location
   resource_group_name = azurerm_resource_group.mcit420zz5um.name
