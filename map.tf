@@ -20,6 +20,8 @@ key3 = {
   enemies_destroyed = 20000056894
   badguy = true
 }
+}
+}
 
 
 
