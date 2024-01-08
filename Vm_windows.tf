@@ -2,7 +2,7 @@ resource "azurerm_service_plan" "mcitsp" {
   name                = "${var.prefix}service_plan"
   resource_group_name = azurerm_resource_group.mcit420zz5um.name
   location            = azurerm_resource_group.mcit420zz5um.location
-  os_type             = "Linux"
+  os_type             = "Windows"
   sku_name            = "P1v2"
 }
 locals{ 
