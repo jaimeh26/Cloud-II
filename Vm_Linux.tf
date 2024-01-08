@@ -9,6 +9,7 @@ locals{
   subnet_ids=["subnet1","subnet2"]
 }
 resource "azurerm_linux_web_app" "mcit_linux" {
+  for_each            = 
   name                = "${var.prefix}linux-web-app"
   resource_group_name = azurerm_resource_group.mcit420zz5um.name
   location            = azurerm_resource_group.mcit420zz5um.location
