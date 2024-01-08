@@ -22,7 +22,7 @@ key3 = {
 }
 }
 }
-output "print"{
+output "print2"{
       value = var.example_map
 }
 
