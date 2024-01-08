@@ -22,7 +22,7 @@ resource "azurerm_virtual_network" "mcitvn" {
   subnet {
     name           = "subnet2"
     address_prefix = "10.0.2.0/24"
-    security_group = azurerm_network_security_group.example.id
+    security_group = azurerm_network_security_group.mcitsg.id
   }
 
   tags = {
