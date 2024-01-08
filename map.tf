@@ -22,6 +22,9 @@ key3 = {
 }
 }
 }
+output "print"{
+      value = var.example_map
+}
 
 
 
