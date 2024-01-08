@@ -6,11 +6,11 @@ resource "azurerm_service_plan" "mcitsp" {
   sku_name            = "P1v2"
 }
 
-resource "azurerm_linux_web_app" "example" {
+resource "azurerm_linux_web_app" "mcit_linux" {
   name                = "example"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_service_plan.example.location
-  service_plan_id     = azurerm_service_plan.example.id
+  resource_group_name = azurerm_resource_group.mcit420zz5um.name
+  location            = azurerm_service_plan.mcit420zz5um.location
+  service_plan_id     = azurerm_service_plan.mcitsp.id
 
   site_config {}
 }
