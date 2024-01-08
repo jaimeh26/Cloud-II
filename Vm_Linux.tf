@@ -1,7 +1,7 @@
 resource "azurerm_service_plan" "mcitsp" {
   name                = "${var.prefix}service_plan"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.mcit420zz5um.name
+  location            = azurerm_resource_group.mcit420zz5um.location
   os_type             = "Linux"
   sku_name            = "P1v2"
 }
