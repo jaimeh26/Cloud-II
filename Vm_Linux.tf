@@ -9,6 +9,7 @@ locals {
   subnet_ids = {
     for key, vnet in azurerm_virtual_network.mcitvn : key => vnet.subnet["subnet2"].id
   }
+}
 
 resource "azurerm_linux_web_app" "mcit_linux" {
   name                = "${var.prefix}linux-web-app"
