@@ -25,6 +25,15 @@ key3 = {
 output "print2"{
       value = var.example_map
 }
+variable "lightsabre_color_map"{
+  type = map(list(string))
+  default = {
+  luke = ["green", "blue"]
+  yoda = ["green"]
+  darth = ["red"]
+}
+}
+
 
 
 
