@@ -37,7 +37,7 @@ output "print3"{
   value = var.lightsabre_color_map
 }
 
-locals {
+/*locals {
   characters = ["luke", "yoda", "dart"]
   enemies_destroyed = [4552, 900, 20000056894]
 }
@@ -45,6 +45,7 @@ output "print4" {
   value = {for index, character in toset(local.characters): character => local.enemies_destroyed[index]
 }
 }
+*/
 
 
 
