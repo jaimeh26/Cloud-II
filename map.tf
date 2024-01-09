@@ -35,6 +35,7 @@ variable "lightsabre_color_map"{
 }
 output "print3"{
   value = var.lightsabre_color_map
+}
 
 
 
