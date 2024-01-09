@@ -42,7 +42,10 @@ locals {
   enemies_destroyed = [4552, 900, 20000056894]
 }
 output "print4" {
-  value = 
+  value = {
+for index, character in toset(local.characters):
+# Convert character list to a set character => local.enemies_destroyed[index]
+}
 
 
 
