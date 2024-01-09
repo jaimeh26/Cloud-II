@@ -33,6 +33,8 @@ variable "lightsabre_color_map"{
   darth = ["red"]
 }
 }
+output "print3"{
+  value = var.lightsabre_color_map
 
 
 
