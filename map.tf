@@ -46,6 +46,7 @@ output "print4" {
 for index, character in toset(local.characters):
 # Convert character list to a set character => local.enemies_destroyed[index]
 }
+}
 
 
 
