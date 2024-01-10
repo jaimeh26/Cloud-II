@@ -46,7 +46,14 @@ value={for index,character in local.characters: # Convert character list to a se
       character => local.enemies_destroyed[index]
 }
 }
-
+locals {
+  alphabets=["a","b","c","d","e"]
+  numbers=[1,2,3,4,5]
+}
+output "print5" {
+  value = {for index,alphabet in local.alphabets: # Convert alphabet list to a set
+  alphabet => local.numbers[index]
+}
 
 
 
