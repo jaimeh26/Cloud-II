@@ -54,6 +54,7 @@ output "print5" {
   value = {for index,alphabet in local.alphabets: # Convert alphabet list to a set
   alphabet => local.numbers[index]
 }
+}
 
 
 
