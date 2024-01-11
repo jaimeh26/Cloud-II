@@ -5,3 +5,9 @@ variable "my_map" {
     "key2" = "value2"
 }
 }
+locals {
+  my_value = lookup(var.my_map, "key1", "")
+}
+output "my_value_output" {
+  value = local.my_value
+}
