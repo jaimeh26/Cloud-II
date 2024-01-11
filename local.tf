@@ -12,5 +12,6 @@ total_output = [1,2,3,4,5,6,7,8,9,10]
 total_output2 = ["1","2","3","4","5","6","7","8","9","10"]
 name_of_the_list=["firstnamestorageaccountmcitlastname","storage2","storage3"]
 simple_local_flattened_list = flatten(var.simple_nested_list)
+flattened_map  = flatten([for k, v in var.nested_map : [for kk, vv in v : { group = k, key = kk, value = vv }]])
 }
 
