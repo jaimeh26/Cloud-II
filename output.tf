@@ -43,4 +43,6 @@ output "storage_account_names" {
 output "simple_flattened_list_result" {
       value = local.simple_local_flattened_list
 }
-
+output "flattened_map_result" {
+  value = local.flattened_map
+}
