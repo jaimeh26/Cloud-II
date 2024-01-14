@@ -6,7 +6,7 @@ locals{
         name = listofstorageaccounts.name
         account_tier = listofstorageaccounts.account_tier
         account_replication_type = listofstorageaccounts.account_replication_type
-        access _tier = listofstorageaccounts.access_tier
+        access_tier = listofstorageaccounts.access_tier
         cross_tenant_replication_enabled = listofstorageaccounts.cross_tenant_replication_enabled
         
       }
