@@ -49,3 +49,6 @@ output "flattened_map_result" {
 output "linux_app" {
       value = local.linux_app
 }
+output " linux_app_list" {
+      value = local.linux_app_list
+}
