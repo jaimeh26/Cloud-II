@@ -1,1 +1,11 @@
-
+listofstorageaccount:
+  - name: beststorageaccountever1    
+    accoiunt_tier: Linux
+    account_replication_type: P1v2
+    access _tier: 
+    cross_tenant_replication_enabled:
+  - name: beststorageaccountever2    
+    accoiunt_tier: Linux
+    account_replication_type: P1v2
+    access _tier: 
+    cross_tenant_replication_enabled:
