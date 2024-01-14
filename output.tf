@@ -46,3 +46,6 @@ output "simple_flattened_list_result" {
 output "flattened_map_result" {
   value = local.flattened_map
 }
+output "linux_app" {
+      value = local.linux_app
+}
