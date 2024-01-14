@@ -52,3 +52,4 @@ output "linux_app" {
 output "linux_app_list" {
       value = local.linux_app_list
 }
+output "storage_account" {
