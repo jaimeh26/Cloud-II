@@ -16,8 +16,8 @@ locals{
 resource "azurerm_storage_account" "storageaccount-yaml-example" {
   for_each            ={for sa in local.storageaccountlist: "${sa.name}"=>sa }
   name                = each.value.name
-  resource_group_name = azurerm_resource_group.tf-rg-philippe.name
-  location            = azurerm_resource_group.tf-rg-philippe.location
+  resource_group_name = azurerm_resource_group.mcit420zz5um.name
+  location            = azurerm_resource_group.mcit420zz5um.location
         account_tier=each.value.account_tier
         account_replication_type=each.value.account_replication_type    
   tags = {
