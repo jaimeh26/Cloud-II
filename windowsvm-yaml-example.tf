@@ -13,8 +13,8 @@ locals{
 
 resource "azurerm_network_interface" "windows-nic" {
   name                = "windows-vm-nic"
-  location            = azurerm_resource_group.tf-rg-philippe.location
-  resource_group_name = azurerm_resource_group.tf-rg-philippe.name
+  location            = azurerm_resource_group.mcit420zz5um.location
+  resource_group_name = azurerm_resource_group.mcit420zz5um.name
 
   ip_configuration {
     name                          = "internal"
@@ -28,8 +28,8 @@ resource "azurerm_network_interface" "windows-nic" {
 resource "azurerm_windows_virtual_machine" "windows-vm-machine" {
   for_each            ={for wvm in local.windowsvm_list: "${wvm.name}"=>wvm }
   name                = each.value.name
-  resource_group_name = azurerm_resource_group.tf-rg-philippe.name
-  location            = azurerm_resource_group.tf-rg-philippe.location
+  resource_group_name = azurerm_resource_group.mcit420zz5um.name
+  location            = azurerm_resource_group.mcit420zz5um.location
   size                = "Standard_F2"
   admin_username      = each.value.admin_username
   admin_password      = each.value.admin_password
