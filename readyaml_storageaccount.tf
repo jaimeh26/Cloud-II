@@ -1,15 +1,30 @@
 locals{
-  storage_account = [for f in fileset("${path.module}/storageaccountconfig", "[^_]*.yaml") : yamldecode(file("${path.module}/storageaccountconfig/${f}"))]
-  storage_account_list = flatten([
-    for storage_account in local.storage_account : [
-      for storageaccounts in try(storage.listofstorageaccount, []) :{
-        name = storageaccounts.name
-        account_tier = storageaccounts.account_tier
-        account_replication_type = storageaccounts.account_replication_type
-        access_tier = storageaccounts.access_tier
-        cross_tenant_replication_enabled = storageaccounts.cross_tenant_replication_enabled
+  storageaccounts = [for f in fileset("${path.module}/storageaccountconfig", "[^_]*.yaml") : yamldecode(file("${path.module}/storageaccountconfig/${f}"))]
+  storageaccountlist = flatten([
+    for storageaccount in local.storageaccounts : [
+      for storageaccount in try(storageaccount.listofstorageaccount, []) :{
+        name = storageaccount.name
+        account_tier = storageaccount.account_tier
+        account_replication_type = storageaccount.account_replication_type
+        access_tier = storageaccount.access_tier
+        cross_tenant_replication_enabled = storageaccount.cross_tenant_replication_enabled
         
       }
     ]
 ])
+}
+resource "azurerm_storage_account" "storageaccount-yaml-example" {
+  for_each            ={for sa in local.storageaccountlist: "${sa.name}"=>sa }
+  name                = each.value.name
+  resource_group_name = azurerm_resource_group.tf-rg-philippe.name
+  location            = azurerm_resource_group.tf-rg-philippe.location
+        account_tier=each.value.account_tier
+        account_replication_type=each.value.account_replication_type    
+  tags = {
+    environment = "staging"
+  }
+}
+
+output "storageaccount_list_yaml" {
+ value = local.storageaccountlist
 }
