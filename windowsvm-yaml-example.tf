@@ -11,7 +11,7 @@ locals{
   ])
 }
 
-resource "azurerm_network_interface" "windows-nic" {
+/*resource "azurerm_network_interface" "windows-nic" {
   name                = "windows-vm-nic"
   location            = azurerm_resource_group.mcit420zz5um.location
   resource_group_name = azurerm_resource_group.mcit420zz5um.name
@@ -22,6 +22,7 @@ resource "azurerm_network_interface" "windows-nic" {
     private_ip_address_allocation = "Dynamic"
   }
 }
+*/
 
 
 
