@@ -1,5 +1,5 @@
 locals{
-  storageaccounts=[for f in fileset("${path.module}/storageaccountconfig", "[^_]*.yaml") : yamldecode(file("${path.module}/storageaccountconfig/${f}"))]
+  storageaccounts=[for f in fileset("${path.module}/configs/storageaccountconfig", "[^_]*.yaml") : yamldecode(file("${path.module}/configs/storageaccountconfig/${f}"))]
   storageaccountlist = flatten([
     for info in local.storageaccounts : [
       for storageaccount in try(info.listofstorageaccount, []) :{
