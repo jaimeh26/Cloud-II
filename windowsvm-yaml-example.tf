@@ -33,10 +33,10 @@ resource "azurerm_windows_virtual_machine" "windows-vm-machine" {
   size                = "Standard_F2"
   admin_username      = each.value.admin_username
   admin_password      = each.value.admin_password
-  network_interface_ids = [
+  /*network_interface_ids = [
     azurerm_network_interface.linux-nic.id,
   ]
-
+*/
 
   os_disk {
     caching              = "ReadWrite"
