@@ -36,8 +36,8 @@ resource "azurerm_windows_virtual_machine" "windows-vm-machine" {
   admin_password      = each.value.admin_password
   /*network_interface_ids = [
     azurerm_network_interface.linux-nic.id,
-*/
   ]
+*/
 
   os_disk {
     caching              = "ReadWrite"
