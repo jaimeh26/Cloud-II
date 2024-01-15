@@ -1,1 +1,8 @@
+listofwindowsvm:
+  - name: windowsvm1
+    admin_username: adminuser
+    admin_password: P@$$w0rd####!
 
+  - name: windowsvm2
+    admin_username: adminuser
+    admin_password: P@$$w0rd####!
