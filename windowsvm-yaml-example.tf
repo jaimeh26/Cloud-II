@@ -1,4 +1,4 @@
-locals{
+/*locals{
  windowsvm =[for f in fileset("${path.module}/configs/windows_vm_configs", "[^_]*.yaml") : yamldecode(file("${path.module}/configs/windows_vm_configs/${f}"))]
  windowsvm_list = flatten([
     for info in local.windowsvm : [
@@ -22,7 +22,6 @@ locals{
     private_ip_address_allocation = "Dynamic"
   }
 }
-*/
 
 
 resource "azurerm_windows_virtual_machine" "windows-vm-machine" {
@@ -36,7 +35,7 @@ resource "azurerm_windows_virtual_machine" "windows-vm-machine" {
   /*network_interface_ids = [
     azurerm_network_interface.linux-nic.id,
   ]
-*/
+
 
   os_disk {
     caching              = "ReadWrite"
@@ -54,3 +53,4 @@ resource "azurerm_windows_virtual_machine" "windows-vm-machine" {
 output "windows_vm_output_yaml" {
  value=local.windowsvm_list
 }
+*/
