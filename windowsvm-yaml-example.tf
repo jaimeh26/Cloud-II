@@ -11,7 +11,7 @@ locals{
   ])
 }
 
-/*resource "azurerm_network_interface" "windows-nic" {
+resource "azurerm_network_interface" "windows-nic" {
   name                = "windows-vm-nic"
   location            = azurerm_resource_group.mcit420zz5um.location
   resource_group_name = azurerm_resource_group.mcit420zz5um.name
@@ -22,8 +22,6 @@ locals{
     private_ip_address_allocation = "Dynamic"
   }
 }
-*/
-
 
 
 resource "azurerm_windows_virtual_machine" "windows-vm-machine" {
@@ -34,10 +32,10 @@ resource "azurerm_windows_virtual_machine" "windows-vm-machine" {
   size                = "Standard_F2"
   admin_username      = each.value.admin_username
   admin_password      = each.value.admin_password
-  /*network_interface_ids = [
+  network_interface_ids = [
     azurerm_network_interface.linux-nic.id,
   ]
-*/
+
 
   os_disk {
     caching              = "ReadWrite"
