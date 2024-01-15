@@ -1,11 +1,1 @@
-listofstorageaccount:
-  - name: beststorageaccountever1    
-    accoiunt_tier: Standard
-    account_replication_type: GRS
-    access _tier: Cool
-    cross_tenant_replication_enabled: enabled
-  - name: beststorageaccountever2    
-    accoiunt_tier: Standard
-    account_replication_type: GRS
-    access _tier: Cool
-    cross_tenant_replication_enabled: enabled
+
