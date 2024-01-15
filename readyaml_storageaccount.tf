@@ -13,7 +13,7 @@ locals{
     ]
 ])
 }
-resource "azurerm_storage_account" "storageaccount-yaml-example" {
+resource "azurerm_storage_account" "readyaml_storageaccount" {
   for_each            ={for sa in local.storageaccountlist: "${sa.name}"=>sa }
   name                = each.value.name
   resource_group_name = azurerm_resource_group.mcit420zz5um.name
