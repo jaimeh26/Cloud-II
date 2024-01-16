@@ -7,7 +7,7 @@ locals{
   azure_lb_list = flatten([
     for lb in local.azure_lb_list: [
       for azurelb in try(lb.listofallocationmethod, []) :{
-        allocation_method=azurelb.policyname
+        allocation_method=azurelb.allocation_method
       }
     ]
 ])
