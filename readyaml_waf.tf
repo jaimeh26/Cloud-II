@@ -3,9 +3,10 @@ locals{
   waf_app_list = flatten([
     for app in local.wafapp : [
       for wafapps in try(app.listofwafapp, []) :{
-        name=linuxapps.name
-        os_type=linuxapps.os_type
-        sku_name=linuxapps.sku_name     
+        name=wafapps.name
+        resource_group_name = azurerm_resource_group.example.name
+        location            = azurerm_resource_group.example.location
+             
       }
     ]
 ])
