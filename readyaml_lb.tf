@@ -6,7 +6,7 @@ locals{
   allocation_method=[for f in fileset("${path.module}/lb_config", "[^_]*.yaml") : yamldecode(file("${path.module}/lb_config/${f}"))]
   azure_lb_list = flatten([
     for lb in local.azure_lb_list: [
-      for azurewaf in try(app.listofwafpolicy, []) :{
+      for azurelb in try(app.listofwafpolicy, []) :{
         name=azurewaf.policyname
       }
     ]
