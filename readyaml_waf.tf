@@ -1,14 +1,4 @@
-resource "azurerm_resource_group" "example" {
-  name     = "example-rg"
-  location = "West Europe"
-}
-
-resource "azurerm_web_application_firewall_policy" "example" {
-  for_each            ={for sp in local.azurewafpolicy_list: "${sp.name}"=>sp }
-  name                = each.value.name
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
-  locals{
+locals{
   waf_policy=[for f in fileset("${path.module}/waf_config", "[^_]*.yaml") : yamldecode(file("${path.module}/waf_config/${f}"))]
   azurewafpolicy_list = flatten([
     for app in local.waf_policy: [
@@ -19,6 +9,17 @@ resource "azurerm_web_application_firewall_policy" "example" {
 ])
 }
 
+resource "azurerm_resource_group" "example" {
+  name     = "example-rg"
+  location = "West Europe"
+}
+
+resource "azurerm_web_application_firewall_policy" "example" {
+  for_each            ={for sp in local.azurewafpolicy_list: "${sp.name}"=>sp }
+  name                = each.value.name
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+    
   custom_rules {
     name      = "Rule1"
     priority  = 1
