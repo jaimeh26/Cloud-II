@@ -1,14 +1,10 @@
 locals{
-  waf_app=[for f in fileset("${path.module}/waf_config, "[^_]*.yaml") : yamldecode(file("${path.module}/waf_config/${f}"))]
-  waf_app_list= flatten([
-    for app in local.waf_app : [
-      for wafapps in try(app.listofwafapp, []) :{
-        name=wafapps.name
-              
+  waf_policy=[for f in fileset("${path.module}/waffolder", "[^_]*.yaml") : yamldecode(file("${path.module}/waffolder/${f}"))]
+  azurewafpolicy_list = flatten([
+    for app in local.waf_policy: [
+      for azurewaf in try(app.listofwafpolicy, []) :{
+        name=azurewaf.policyname
       }
     ]
 ])
-}
-output "wafapp" {
-  value = local.waf_app
 }
