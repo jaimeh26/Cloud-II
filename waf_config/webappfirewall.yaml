@@ -1,9 +1,5 @@
 listofwafapp:
   -  name: mcit-wafpolicy1
-     resource_group_name: azurerm_resource_group.mcit420zz5um.name
-     location: azurerm_resource_group.mcit420zz5um.location
   -  name: mcit-wafpolicy2
-     resource_group_name: azurerm_resource_group.mcit420zz5um.name
-     location: azurerm_resource_group.mcit420zz5um.location
-
+     
  
