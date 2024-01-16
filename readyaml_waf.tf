@@ -9,3 +9,6 @@ locals{
     ]
 ])
 }
+output "wafapp" {
+  value = local.waf_app
+}
