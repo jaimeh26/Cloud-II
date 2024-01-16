@@ -18,6 +18,7 @@ resource "azurerm_public_ip" "example1" {
   name                = "PublicIPForLB"
   location            = azurerm_resource_group.example1.location
   resource_group_name = azurerm_resource_group.example1.name
+}
   
 
 resource "azurerm_lb" "example1" {
