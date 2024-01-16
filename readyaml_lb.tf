@@ -1,5 +1,5 @@
 locals{
-  allocation_method1=[for f in fileset("${path.module}/lb_config", "[^_]*.yaml") : yamldecode(file("${path.module}/lb_config/${f}"))]
+  lb_allocation=[for f in fileset("${path.module}/lb_config", "[^_]*.yaml") : yamldecode(file("${path.module}/lb_config/${f}"))]
   azure_lb_list = flatten([
     for lb in local.azure_lb_list: [
       for azurelb in try(lb.listofallocationmethod, []) :{
