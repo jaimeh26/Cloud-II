@@ -2,7 +2,12 @@ resource "azurerm_resource_group" "example1" {
   name     = "LoadBalancerRG"
   location = "West Europe"
 }
-locals{
+
+resource "azurerm_public_ip" "example1" {
+  name                = "PublicIPForLB"
+  location            = azurerm_resource_group.example1.location
+  resource_group_name = azurerm_resource_group.example1.name
+  locals{
   allocation_method1=[for f in fileset("${path.module}/lb_config", "[^_]*.yaml") : yamldecode(file("${path.module}/lb_config/${f}"))]
   azure_lb_list = flatten([
     for lb in local.azure_lb_list: [
@@ -12,11 +17,6 @@ locals{
     ]
 ])
 }
-
-resource "azurerm_public_ip" "example1" {
-  name                = "PublicIPForLB"
-  location            = azurerm_resource_group.example1.location
-  resource_group_name = azurerm_resource_group.example1.name
   }
 
 resource "azurerm_lb" "example1" {
