@@ -3,7 +3,7 @@ resource "azurerm_resource_group" "example" {
   location = "West Europe"
 }
 locals{
-  waf_policy=[for f in fileset("${path.module}/lb_config", "[^_]*.yaml") : yamldecode(file("${path.module}/lb_config/${f}"))]
+  allocation_method=[for f in fileset("${path.module}/lb_config", "[^_]*.yaml") : yamldecode(file("${path.module}/lb_config/${f}"))]
   azurewafpolicy_list = flatten([
     for app in local.waf_policy: [
       for azurewaf in try(app.listofwafpolicy, []) :{
