@@ -1,34 +1,36 @@
 locals{
-  lb_allocation=[for f in fileset("${path.module}/lb_config", "[^_]*.yaml") : yamldecode(file("${path.module}/lb_config/${f}"))]
-  allocation_list = flatten([
-    for lb in local.lb_allocation: [
-      for azurelb in try(lb.listofallocationmethod, []) :{
-        allocation_method=azurelb.allocation_method
+  loadbalancerconfig=[for f in fileset("${path.module}/lb_config", "[^_]*.yaml") : yamldecode(file("${path.module}/lb_config/${f}"))]
+  loadbalancerlist = flatten([
+    for app in local.loadbalancerconfig : [
+      for loadbalancer in try(app.loadbalancerconfiguration, []) :{
+        name=loadbalancer.publicipname
+        allocation_method=loadbalancer.allocation_method
+
       }
     ]
 ])
 }
-
-resource "azurerm_resource_group" "example1" {
+resource "azurerm_resource_group" "loadbalancerrg" {
   name     = "LoadBalancerRG"
   location = "West Europe"
 }
 
-resource "azurerm_public_ip" "example1" {
-  name                = "PublicIPForLB"
-  location            = azurerm_resource_group.example1.location
-  resource_group_name = azurerm_resource_group.example1.name
+resource "azurerm_public_ip" "azurepublicipexample" {
+  for_each            = {for publicip in local.loadbalancerlist: "${publicip.name}"=>publicip }
+  name                = each.value.name
+  location            = azurerm_resource_group.loadbalancerrg.location
+  resource_group_name = azurerm_resource_group.loadbalancerrg.name
   allocation_method   = each.value.allocation_method
 }
-  
 
-resource "azurerm_lb" "example1" {
-  name                = "TestLoadBalancer"
-  location            = azurerm_resource_group.example1.location
-  resource_group_name = azurerm_resource_group.example1.name
-
+resource "azurerm_lb" "azureloadbalancerexample" {
+  for_each            = azurerm_public_ip.azurepublicipexample
+  name                = each.value.name
+  location            = azurerm_resource_group.loadbalancerrg.location
+  resource_group_name = azurerm_resource_group.loadbalancerrg.name
   frontend_ip_configuration {
     name                 = "PublicIPAddress"
-    public_ip_address_id = azurerm_public_ip.example1.id
+    public_ip_address_id = each.value.id
   }
 }
+
