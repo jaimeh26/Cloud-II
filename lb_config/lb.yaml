@@ -1,2 +1,3 @@
-listofallocationmethod:
-  - allocation_method: Static
+loadbalancerconfiguration:
+  - publicipname: newpublicip
+    allocation_method: Static
