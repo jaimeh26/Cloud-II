@@ -7,7 +7,7 @@ module "ressource_group" {
 }
 
 output "ressource_group_name" {
-  value = module.resource_group.ressource_group_name
+  value = module.ressource_group.ressource_group_name
 }
 
 output "ressource_group_id" {
