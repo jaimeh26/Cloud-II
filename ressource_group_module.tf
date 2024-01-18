@@ -1,7 +1,7 @@
 module "ressource_group" {
   source = "./module_ressource_group/"
 
-  resource_group_name   = "myresourcegroup"
+  ressource_group_name   = "myressourcegroup"
   location              = "eastus"
   
 }
