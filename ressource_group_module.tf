@@ -6,10 +6,10 @@ module "ressource_group" {
   
 }
 
-output "storage_account_name" {
-  value = module.storage_account.storage_account_name
+output "ressource_group_name" {
+  value = module.resource_group.ressource_group_name
 }
 
-output "storage_account_id" {
-  value = module.storage_account.storage_account_id
+output "ressource_group_id" {
+  value = module.ressource_group.ressource_group_id
 }
