@@ -5,6 +5,7 @@ variable "resource_group_name" {
 
 variable "location" {
   description = "The Azure region where resources will be deployed."
+  default     = "eastus"
   
 
 variable "service_plan_name" {
