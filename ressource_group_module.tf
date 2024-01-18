@@ -1,5 +1,5 @@
-module "resource_group" {
-  source = "./module_resource_group/"
+module "ressource_group" {
+  source = "./module_ressource_group/"
 
   resource_group_name   = "myresourcegroup"
   location              = "eastus"
