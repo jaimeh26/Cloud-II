@@ -6,6 +6,7 @@ variable "resource_group_name" {
 
 variable "location" {
     description = "The Azure region where the Resource Group will be created"
+    default     = "eastus"
 }
 
 resource "azurerm_resource_group" "example" {
