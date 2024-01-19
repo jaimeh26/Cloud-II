@@ -1,4 +1,4 @@
-variable "nested_map" {
+variable "nested_map2" {
   type    = map(map(string))
   default = {
     group1 = {"name" = "Bob", "age" = "25"}
