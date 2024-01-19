@@ -1,4 +1,4 @@
-module "example" {
+/*module "example" {
   source               = "./module_linux_web_app"
   resource_group_name = "example-resources"
   location            = "eastus"
@@ -17,3 +17,4 @@ output "service_plan_id" {
 output "web_app_id" {
   value = azurerm_linux_web_app.example.id
 }
+*/
