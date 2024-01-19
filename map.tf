@@ -1,4 +1,4 @@
-variable "example_map"{
+/*variable "example_map"{
   type=map(object({
   name=string
   enemies_destroyed = number
@@ -55,7 +55,7 @@ output "print5" {
   alphabet => local.numbers[index]
 }
 }
-
+*/
 
 
 
