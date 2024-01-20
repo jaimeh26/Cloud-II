@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 locals{
-  linux_app=[for f in fileset("${path.module}/configs", "[^_]*.yaml") : yamldecode(file("${path.module}/configs/${f}"))]
+  windows_app=[for f in fileset("${path.module}/windows_app_config", "[^_]*.yaml") : yamldecode(file("${path.module}/windows_app_config/${f}"))]
   linux_app_list = flatten([
     for app in local.linux_app : [
       for linuxapps in try(app.listoflinuxapp, []) :{
